@@ -4,7 +4,7 @@
 	"main": "index.js",
 	"license": "MIT",
 	"scripts": {
-		"prestart": "eslint --fix src --ext .js",
+		"build": "eslint --fix src --ext .js",
 		"start": "node src/server.js",
 		"dev": "nodemon --inspect src/server.js --ignore tests",
 		"pretest": "NODE_ENV=test sequelize db:create &&  NODE_ENV=test sequelize db:migrate",
