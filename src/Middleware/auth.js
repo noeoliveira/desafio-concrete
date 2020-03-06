@@ -49,9 +49,9 @@ module.exports = (req, res, next) => {
 			.status(status.UNAUTHORIZED)
 			.json({ error: "Parameters token invalid" });
 
-	jwt.verify(token, jwtConfig.secret, async (error, decoded) => {
+	jwt.verify(token, jwtConfig.jwtSecret, async (error, decoded) => {
 		if (error) {
-			return res.json({ error: "Sessão inválida" });
+			return res.json({ error: "Sessão inválida", teste: error });
 		}
 
 		const user = await User.findByPk(decoded.id, { raw: true });

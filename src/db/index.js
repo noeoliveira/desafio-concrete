@@ -22,7 +22,7 @@ if (process.env.NODE_ENV !== "test") {
 		}
 	});
 	(async () => {
-		await umzug.down({ to: 0 });
+		// await umzug.down({ to: 0 });
 		await umzug.up();
 	})();
 }
